@@ -18,7 +18,7 @@ pipeline {
             }
             post {
                always {
-                   sh 'docker image prune -a --filter "until=7d"'
+                   sh 'docker image prune -a --filter "until=7d" --force'
                }
             }
         }
