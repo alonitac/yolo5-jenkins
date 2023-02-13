@@ -19,7 +19,7 @@ app = Flask(__name__, static_url_path='')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def upload_file():
     if 'file' not in request.files:
         flash('No file part')
