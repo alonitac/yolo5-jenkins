@@ -11,7 +11,6 @@ pipeline {
         }
         stage('Build') {
             steps {
-                cleanWs()
                 sh '''
                 cd fantastic_ascii
                 python3 -m build
@@ -32,6 +31,11 @@ pipeline {
                     '''
                 }
             }
+        }
+    }
+    post {
+        always {
+            cleanWs()
         }
     }
 }
