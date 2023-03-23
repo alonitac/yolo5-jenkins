@@ -12,8 +12,8 @@ pipeline {
             steps {
                 sh """
                 cd infra
-                terraform init
-                terraform plan -out tfplan_out
+                terraform init -no-color
+                terraform plan -no-color -out tfplan_out --var-file="secret.tfvars"
                 """
             }
         }
